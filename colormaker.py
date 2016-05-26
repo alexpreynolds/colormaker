@@ -19,6 +19,9 @@ if not (options.seed and options.number):
     (options, args) = parser.parse_args(args)
     sys.exit(-1)
 
+if not options.asHex and not options.asRGB and not options.asRGBA:
+    options.asHex = True
+    
 GOLDEN_RATIO_CONJUGATE = 0.618033988749895
 
 def generate_color(h, s, v):
